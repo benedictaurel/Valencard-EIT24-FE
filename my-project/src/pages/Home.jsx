@@ -1,15 +1,21 @@
-import Rectangle from "./../assets/Rectangle.png";
 import Heart from "./../assets/Heart.png"
+import Surat from "./../assets/surat.png"
+import Buletbawah from "./../assets/buletbulet.png"
+
+
 const Home = () => {
     return (
         <>
             <div className='overflow-hidden'>
                 <div className='bg-gradient-to-b overflow-hidden from-pink1 to-pink2 min-h-screen justify-center items-center flex relative'>
-                    <img src={Rectangle} alt="kotaknya doang" className="absolute top-52 z-0"/>
+                    <img src={Surat} alt="kotaknya doang" className="absolute top-48 z-0" />
+                    <img src={Buletbawah} alt="kotaknya doang" className="absolute bottom-0 left-0 w-full h-1/3 z-0" />
                     <div className='flex-col text-center font-bold z-10'>
                         {/* <valenCard/> */}
-                        <h1 className='text-[100px] text-brown1 mb-20 font-titanone font-normal'>
-                            VALEN CARD
+                        <h1 className='text-[100px] text-brown1 mb-20 font-titanone font-normal flex flex-row'>
+                            VALEN
+                            <tr><img src={Heart} alt="hati surat" className="mt-8"/></tr>
+                            CARD
                         </h1>
                         <h1 className='text-xl font-kleeone mb-1'>enter your code</h1>
                         <input type="form"
