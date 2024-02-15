@@ -9,7 +9,7 @@ const Home = () => {
                     <div className='flex-col text-center font-bold z-10'>
                         {/* <valenCard/> */}
                         <h1 className='text-[100px] text-brown1 mb-20 font-titanone font-normal'>
-                            VALEN {Heart} CARD
+                            VALEN CARD
                         </h1>
                         <h1 className='text-xl font-kleeone mb-1'>enter your code</h1>
                         <input type="form"
