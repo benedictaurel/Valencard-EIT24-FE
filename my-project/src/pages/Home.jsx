@@ -14,16 +14,16 @@ const Home = () => {
                         {/* <valenCard/> */}
                         <h1 className='text-[100px] text-brown1 mb-20 font-titanone font-normal flex flex-row'>
                             VALEN
-                            <tr><img src={Heart} alt="hati surat" className="mt-8"/></tr>
+                            <img src={Heart} alt="hati surat" className="w-auto h-24 mt-10"/>
                             CARD
                         </h1>
                         <h1 className='text-xl font-kleeone mb-1'>enter your code</h1>
                         <input type="form"
                             placeholder='...'
-                            className='text-center text-2xl font-normal font-kleeone w-full h-16 rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1'
+                            className='text-center text-3xl font-normal font-kleeone w-[654px] h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
                         />
                         <h1 className='text-xl font-kleeone mb-1'>or</h1>
-                        <button className='text-center text-xl font-normal font-kleeone w-full h-16 rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-200'>
+                        <button className='text-center text-xl font-normal font-kleeone w-[654px] h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300'>
                             make your own card now
                         </button>
                     </div>

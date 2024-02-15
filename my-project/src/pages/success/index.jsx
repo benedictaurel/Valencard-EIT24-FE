@@ -1,5 +1,5 @@
 import msgform from "./../../assets/msgform.png";
-
+import { Copy } from "@phosphor-icons/react";
 const success = () => {
   return (
     <>
@@ -28,7 +28,8 @@ const success = () => {
               <h1 className="text-3xl font-bold font-sarala mb-6">
                 contohnamawebsite.com/111111
               </h1>
-              <h1 className="text-3xl font-bold font-mada mb-6 text-pinktebel hover:cursor-pointer">
+              <h1 className=" flex flex-row underline underline-offset-8 text-3xl font-bold font-mada mb-6 text-pinktebel hover:cursor-pointer">
+                <Copy size={32} />
                 copy link
               </h1>
             </div>
