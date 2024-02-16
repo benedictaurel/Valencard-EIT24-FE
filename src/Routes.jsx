@@ -17,7 +17,7 @@ const ProjectRoutes = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/success" element={<Success />} />
           <Route path="/card" element={<Card />} />
-          <Route path="/form" element={<Formulir />} />
+          <Route path="/generate" element={<Formulir />} />
           {/* <Route path="/generate" element={<GeneratePage />} /> */}
           {/* <Route path="/view" element={<ViewPage />} /> */}
         </Routes>
