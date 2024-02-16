@@ -46,7 +46,7 @@ const Home = () => {
                 $(this).detach();
             }
         });
-    }, 900);
+    }, 500);
 
 
     return (

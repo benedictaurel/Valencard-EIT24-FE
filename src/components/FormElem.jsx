@@ -10,22 +10,23 @@ const GenerateElem = () => {
                         <img src={msgform} alt="gambar surat di form" className="ml-4 w-[50px] lg:w-auto md:w-[90px]" />
                     </h1>
                 </div>
-                <div className="text-left w-full md:px-12 lg:px-[15px] px-[15px] font-sarala text-[16px] md:text-[28px] md:mb-[20px]">To</div>
+                {/* w-[330px] md:w-[560px] lg:w-[1002px] */}
+                <div className="text-left w-full md:px-12 lg:px-[15px] px-[15px] font-sarala text-[16px] md:text-[28px] lg:text-[32px] md:mb-[20px]">To</div>
                 <div className="flex flex-col items-center justify-center gap-6">
                     <textarea
                         style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                        className='px-6 w-[330px] md:w-[560px] lg:w-[1002px] h-[58px] py-2 text-3xl font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none'
+                        className='px-6 w-[100%] h-[58px] py-2 text-3xl font-normal font-sarala rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none'
                     />
                     <div className="text-left w-full md:px-12 lg:px-[15px] px-[15px] font-sarala text-[16px] md:text-[28px] lg:text-[32px]">From</div>
                     <textarea
                         style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                        className='px-6 w-[330px] md:w-[560px] lg:w-[1002px] h-[58px] py-2 text-3xl font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none'
+                        className='px-6 w-[100%] h-[58px] py-2 text-3xl font-normal font-sarala rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none'
                     />
                     <div className="text-left w-full md:px-12 lg:px-[15px] px-[15px]px-[15px] font-sarala text-[16px] md:text-[28px] lg:text-[32px]">Message</div>
                     <textarea
                         maxLength={750}
                         style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                        className='px-6 w-[330px] md:w-[560px] lg:w-[1002px] h-[146px] py-2 text-3xl font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none no-scrollbar resize-none'
+                        className='px-6 w-[100%] h-[146px] py-2 text-3xl font-normal font-sarala rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none no-scrollbar resize-none'
                     />
                     <button className="w-[265px] h-[63px] bg-[#F6EAE7] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] font-kleeone font-semibold">generate now</button>
 
