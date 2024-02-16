@@ -16,14 +16,12 @@ const Home = () => {
 
         if (event.key === "Enter" || event.type === "click") {
             if (typedCode === "") {
-                // searchRef.current.reset()
                 event.preventDefault()
                 alert("please input valid code")
                 return
             }
             event.preventDefault()
             navigate(`/${typedCode}`)
-            // alert(typedCode)
         }
     }
 
