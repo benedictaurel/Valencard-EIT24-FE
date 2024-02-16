@@ -22,7 +22,8 @@ export default {
         "cardformsuccess" : "#FEE1E1",
         "bgnotfound" : "#F07474",
         "tobgnotfound" : "#F7A1A1",
-        "buttoncolor" : "#F6EAE7"
+        "buttoncolor" : "#F6EAE7",
+        "form" : "#FDDADA",
       },
       fontFamily: {
         titanone: "Titan One",
@@ -42,6 +43,9 @@ export default {
         gradient6: "linear-gradient(210deg ,#f8fffc,#fdfdfd00)",
         gradient7: "linear-gradient(180deg ,#ffdede,#fffafa00)",
         gradient8: "linear-gradient(180deg ,#fed1d1,#ff9d9ddd,#d57f7f00)",
+      },
+      boxShadow:{
+        'inner': 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)'
       },
     },
   },
