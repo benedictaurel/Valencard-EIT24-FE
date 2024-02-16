@@ -1,3 +1,5 @@
+
+import $ from 'jquery'; 
 import Heart from "./../assets/Heart.png"
 import Surat from "./../assets/surat.png"
 import Buletbawah from "./../assets/buletbulet.png"
@@ -22,11 +24,35 @@ const Home = () => {
         }
     }
 
+    $( "#header-plugin" ).load( "https://vivinantony.github.io/header-plugin/", function() {
+	$("a.back-to-link").attr("href", "http://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt")  
+    });
+
+    var love = setInterval(function() {
+        var r_num = Math.floor(Math.random() * 40) + 1;
+        var r_size = Math.floor(Math.random() * 65) + 10;
+        var r_left = Math.floor(Math.random() * 100) + 1;
+        var r_bg = Math.floor(Math.random() * 25) + 100;
+        var r_time = Math.floor(Math.random() * 5) + 5;
+
+        $('.bg_heart').append("<div class='heart' style='width:" + r_size + "px;height:" + r_size + "px;left:" + r_left + "%;background:rgba(255," + (r_bg - 25) + "," + r_bg + ",1);-webkit-animation:love " + r_time + "s ease;-moz-animation:love " + r_time + "s ease;-ms-animation:love " + r_time + "s ease;animation:love " + r_time + "s ease'></div>");
+
+        $('.bg_heart').append("<div class='heart' style='width:" + (r_size - 10) + "px;height:" + (r_size - 10) + "px;left:" + (r_left + r_num) + "%;background:rgba(255," + (r_bg - 25) + "," + (r_bg + 25) + ",1);-webkit-animation:love " + (r_time + 5) + "s ease;-moz-animation:love " + (r_time + 5) + "s ease;-ms-animation:love " + (r_time + 5) + "s ease;animation:love " + (r_time + 5) + "s ease'></div>");
+
+        $('.heart').each(function() {
+            var top = $(this).css("top").replace(/[^-\d\.]/g, '');
+            var width = $(this).css("width").replace(/[^-\d\.]/g, '');
+            if (top <= -100 || width >= 150) {
+                $(this).detach();
+            }
+        });
+    }, 900);
+
 
     return (
         <>
-            <div className=''>
-                <div className='overflow-hidden bg-gradient-to-b from-pink1 to-pink2 min-h-screen justify-center items-center flex relative'>
+            <div className='header-plugin'>
+                <div className='bg_heart overflow-hidden bg-gradient-to-b from-pink1 to-pink2 min-h-screen justify-center items-center flex relative'>
                     <img src={Buletbawah} alt="bulet bulet bawah" className="opacity-70 absolute bottom-0 left-0 w-full h-auto lg:h-1/3 z-0" />
                     <img src={Surat} alt="kotaknya doang" className="z-10 fixed flex-none md:top-20 lg:top-4 top-32" />
                     <h1 className='fixed flex-none top-48 md:top-60 lg:top-36 z-20 lg:text-[105px] md:text-[75px] text-[50px] text-brown1 font-titanone font-normal justify-center items-center flex flex-row'>
