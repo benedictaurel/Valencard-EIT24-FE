@@ -9,6 +9,7 @@ function Card() {
           <img src={LoveBackground} alt="lovenya doang" className="absolute bottom--40 left-1/2 transform -translate-x-1/2 scale-150" />
           <div className="text-wrapper absolute top-5 left-1/2 transform -translate-x-1/2 scale-125 mt-16">
             <a href="/">
+                {/* nanti di ganti route nya yaa */}
               <img src={Envelope} alt="envelope" />
             </a>
             <div className="text-6xl font-fredokaone text-color mb-3 bottom-0 text-center">
@@ -23,11 +24,5 @@ function Card() {
     </div>
   );
 }
-
-const textWrapper = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-};
 
 export default Card;
