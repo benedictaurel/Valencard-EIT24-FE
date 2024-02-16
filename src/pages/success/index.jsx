@@ -1,7 +1,40 @@
+import { useState } from "react";
 import msgform from "./../../assets/msgform.png";
 import { Copy } from "@phosphor-icons/react";
 
-const success = () => {
+const successPage = () => {
+  const [isCopied, setIsCopied] = useState(false)
+
+  async function copyText(text) {
+    if ('clipboard' in navigator) {
+      return await navigator.clipboard.writeText(text);
+    } else {
+      return document.execCommand('copy', true, text);
+    }
+  }
+
+  const handleCopy = () => {
+    let textt = document.getElementById("code")
+    textt = textt.textContent
+    copyText(textt)
+    alert("copied code succesfully")
+  }
+
+  const handleCopyLink = () => {
+    let textt = document.getElementById("linkcode")
+    textt = textt.textContent
+    copyText(textt)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
     <>
       <div className='px-[96.5px] bg-gradient-to-t gradient overflow-hidden from-bgsuccess to-tobgsuccess min-h-screen justify-center items-center flex'>
@@ -19,16 +52,17 @@ const success = () => {
             <h1 className="text-3xl font-bold font-sarala mb-6">
               Please view your card this code or link
             </h1>
-            <h1 className="text-[70px] font-bold font-mada text-pinktebel mb-6 hover:cursor-pointe">
+            <h1 id="code"  onClick={handleCopy} className="hover:cursor-pointer text-[70px] font-bold font-mada text-pinktebel mb-6 hover:cursor-pointe">
               (unique code)
             </h1>
             <div className="flex flex-row text-center justify-center items-center gap-4">
-              <h1 className="text-3xl font-bold font-sarala mb-6">
+              <h1 id="linkcode" className="text-3xl font-bold font-sarala mb-6">
                 contohnamawebsite.com/111111
               </h1>
-              <h1 className=" flex flex-row underline underline-offset-8 text-3xl font-bold font-mada mb-6 text-pinktebel hover:cursor-pointer">
+              <h1 onClick={handleCopyLink}
+              className=" flex flex-row underline underline-offset-8 text-3xl font-bold font-mada mb-6 text-pinktebel hover:cursor-pointer">
                 <Copy size={32} />
-                copy link
+                <span>{isCopied ? 'Copied!' : 'copy link'}</span>
               </h1>
             </div>
             {/* button copy link */}
@@ -39,4 +73,4 @@ const success = () => {
   )
 }
 
-export default success
+export default successPage
