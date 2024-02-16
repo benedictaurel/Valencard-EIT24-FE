@@ -5,7 +5,7 @@ const Button = () => {
         <>
             <Link to="/">
                 <button
-                    className='text-2xl shadow-lg shadow-shadowbtn h-16 w-[265px] bg-hvrkrem1 hover:bg-buttoncolor rounded-[34px] font-kleeone' >
+                    className='text-2xl shadow-lg shadow-shadowbtn h-16 w-[265px] bg-hvrkrem1 hover:bg-[#FDC5C5] hover:scale-105 rounded-[34px] font-kleeone transition-all duration-300' >
                     back to home
                 </button>
             </Link>
