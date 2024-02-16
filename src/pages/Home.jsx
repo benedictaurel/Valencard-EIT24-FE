@@ -28,8 +28,8 @@ const Home = () => {
             <div className=''>
                 <div className='overflow-hidden bg-gradient-to-b from-pink1 to-pink2 min-h-screen justify-center items-center flex relative'>
                     <img src={Buletbawah} alt="bulet bulet bawah" className="opacity-70 absolute bottom-0 left-0 w-full h-auto lg:h-1/3 z-0" />
-                    <img src={Surat} alt="kotaknya doang" className="z-10 fixed flex-none md:top-36 lg:top-16 top-36" />
-                    <h1 className='fixed flex-none top-48 md:top-60 lg:top-36 z-20 lg:text-[100px] md:text-[75px] text-[46px] text-brown1 font-titanone font-normal justify-center items-center flex flex-row'>
+                    <img src={Surat} alt="kotaknya doang" className="z-10 fixed flex-none md:top-20 lg:top-4 top-32" />
+                    <h1 className='fixed flex-none top-48 md:top-60 lg:top-36 z-20 lg:text-[105px] md:text-[75px] text-[50px] text-brown1 font-titanone font-normal justify-center items-center flex flex-row'>
                         VALEN
                         <img src={Heart} alt="hati surat" className="md:w-auto w-[48px] lg:h-24 mt-3 lg:mt-10 md:mt-6 md:h-20 sm:h-12" />
                         CARD
