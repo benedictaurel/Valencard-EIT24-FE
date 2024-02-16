@@ -12,6 +12,7 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
     "@phosphor-icons/web": "^2.0.3",
+    "framer-motion": "^11.0.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
