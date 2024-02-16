@@ -1,0 +1,65 @@
+/* CardPage */
+.card-background {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    background: linear-gradient(180deg, #fed1d1 2.9999999329447746%, rgba(244, 233, 233, 0.8700000047683716) 24.500000476837158%, rgba(241, 232, 232, 0) 100%);
+    position: absolute;
+    z-index: 0;
+}
+
+.love-background {
+    background: url(assets/love.svg);
+    background-size: 120%;
+    background-position: center 50vh;
+    width: 100%;
+    height: 100vh;
+    transform: rotate(360deg);
+    z-index: 1;
+    background-repeat: no-repeat;
+}
+
+.envelope {
+    background: url(assets/envelope.png);
+    background-attachment: fixed;
+    background-position: center 25px;
+    height: 575px;
+    z-index: 2;
+    background-repeat: no-repeat;
+}
+
+.text-youhavemessage {
+    width: 977px;
+    height: 39px;
+    margin-left: 425px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    transform: rotate(360deg);
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Fredoka One", "Fredoka One Placeholder", sans-serif;
+    color: #67423d;
+    font-size: 64px;
+    letter-spacing: 0em;
+    line-height: 1.2;
+    position: absolute;
+    z-index: 3;
+}
+
+.text-click {
+    margin-top: 90px;
+    margin-left: 600px;
+    width: auto;
+    height: auto;
+    white-space: pre;
+    transform: rotate(360deg);
+    font-weight: 300;
+    font-style: normal;
+    font-family: "Poppins", "Poppins Placeholder", sans-serif;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0em;
+    line-height: 1.2;
+    position: absolute;
+}
