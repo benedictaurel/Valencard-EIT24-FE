@@ -3,6 +3,7 @@ import Surat from "./../assets/surat.png"
 import Buletbawah from "./../assets/buletbulet.png"
 import { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { MagnifyingGlass } from "@phosphor-icons/react";
 
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
         let typedCode = searchRef.current.value
         typedCode = typedCode.trim()
 
-        if (event.key === "Enter") {
+        if (event.key === "Enter" || event.type === "click") {
             if (typedCode === "") {
                 // searchRef.current.reset()
                 event.preventDefault()
@@ -40,13 +41,18 @@ const Home = () => {
                             CARD
                         </h1>
                         <h1 className='text-xl font-kleeone mb-1'>enter your code</h1>
-                        <form onSubmit={handleSearchCode}
-                            onKeyDown={handleSearchCode}>
-                            <input ref={searchRef}
-                                placeholder="..."
-                                className='text-center text-3xl font-normal font-kleeone w-[654px] h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
-                            />
-                        </form>
+                        <div className="relative">
+                            <form onSubmit={handleSearchCode}
+                                onKeyDown={handleSearchCode}>
+                                <input ref={searchRef}
+                                    placeholder="..."
+                                    className='text-center text-3xl font-normal font-kleeone w-[654px] h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
+                                />
+                            </form>
+                            <button className="absolute text-gray-700 right-14 top-5">
+                                <MagnifyingGlass size={48} onClick={handleSearchCode}/>
+                            </button>
+                        </div>
                         <h1 className='text-xl font-kleeone mb-1'>or</h1>
                         <Link to="/generate">
                             <button className='text-center text-xl font-normal font-kleeone w-[654px] h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300'>

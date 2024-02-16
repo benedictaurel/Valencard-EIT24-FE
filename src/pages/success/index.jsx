@@ -1,8 +1,8 @@
 import { useState } from "react";
 import msgform from "./../../assets/msgform.png";
-import { Copy } from "@phosphor-icons/react";
+import { Copy, CheckSquareOffset } from "@phosphor-icons/react";
 
-const successPage = () => {
+const SuccessPage = () => {
   const [isCopied, setIsCopied] = useState(false)
 
   async function copyText(text) {
@@ -61,11 +61,10 @@ const successPage = () => {
               </h1>
               <h1 onClick={handleCopyLink}
               className=" flex flex-row underline underline-offset-8 text-3xl font-bold font-mada mb-6 text-pinktebel hover:cursor-pointer">
-                <Copy size={32} />
+                <span> {isCopied ? <CheckSquareOffset size={32} /> : <Copy size={32} />} </span>
                 <span>{isCopied ? 'Copied!' : 'copy link'}</span>
               </h1>
             </div>
-            {/* button copy link */}
           </div>
         </div>
       </div>
@@ -73,4 +72,4 @@ const successPage = () => {
   )
 }
 
-export default successPage
+export default SuccessPage
