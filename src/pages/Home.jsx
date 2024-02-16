@@ -2,7 +2,7 @@ import Heart from "./../assets/Heart.png"
 import Surat from "./../assets/surat.png"
 import Buletbawah from "./../assets/buletbulet.png"
 import { useRef } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const Home = () => {
@@ -48,9 +48,11 @@ const Home = () => {
                             />
                         </form>
                         <h1 className='text-xl font-kleeone mb-1'>or</h1>
-                        <button className='text-center text-xl font-normal font-kleeone w-[654px] h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300'>
-                            make your own card now
-                        </button>
+                        <Link to="/generate">
+                            <button className='text-center text-xl font-normal font-kleeone w-[654px] h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300'>
+                                make your own card now
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
