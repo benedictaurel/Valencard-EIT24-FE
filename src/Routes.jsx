@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Card from "./pages/Envelope/Card";
 import Formulir from "./pages/Formulir";
-const Success = React.lazy(() => import("./pages/success"));
 // const GeneratePage = React.lazy(() => import('./pages/generate'));
 // const ViewPage = React.lazy(() => import('./pages/view'));
 
@@ -15,7 +14,6 @@ const ProjectRoutes = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/success" element={<Success />} />
           <Route path="/card" element={<Card />} />
           <Route path="/generate" element={<Formulir />} />
           {/* <Route path="/generate" element={<GeneratePage />} /> */}

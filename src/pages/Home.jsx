@@ -52,7 +52,7 @@ const Home = () => {
     return (
         <>
             <div className='header-plugin'>
-                <div className='bg_heart overflow-hidden bg-gradient-to-b from-pink1 to-pink2 min-h-screen justify-center items-center flex relative'>
+                <div className='bg_heart overflow-hidden bg-gradient-to-bl from-[#FF9B98] to-[#FFE3E8] min-h-screen justify-center items-center flex relative'>
                 <img src={Buletbawah} alt="bulet bulet bawah" className="fixed bottom-0 left-0 w-full h-auto lg:h-1/3 z-10" />
                     <img src={Surat} alt="kotaknya doang" className="z-10 fixed flex-none md:top-20 lg:top-4 top-32" />
                     <h1 className='fixed flex-none top-48 md:top-60 lg:top-36 z-20 lg:text-[105px] md:text-[75px] text-[50px] text-brown1 font-titanone font-normal justify-center items-center flex flex-row'>

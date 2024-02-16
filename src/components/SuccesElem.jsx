@@ -1,8 +1,8 @@
 import { useState } from "react";
-import msgform from "./../../assets/msgform.png";
+import msgform from "./../assets/msgform.png";
 import { Copy, CheckSquareOffset } from "@phosphor-icons/react";
 
-const SuccessPage = () => {
+const SuccessElem = () => {
   const [isCopied, setIsCopied] = useState(false)
 
   async function copyText(text) {
@@ -37,10 +37,10 @@ const SuccessPage = () => {
 
   return (
     <>
-      <div className='px-4 md:px-16 lg:px-[96.5px] bg-gradient-to-t gradient overflow-hidden from-bgsuccess to-tobgsuccess min-h-screen justify-center items-center flex'>
-        <div className="px-6 md:px-12 lg:px-[166.5px] relative py-10 bg-white rounded-[20px] text-center w-full shadow-xl shadow-shadowcard">
+      {/* <div className='px-4 md:px-16 lg:px-[96.5px] bg-gradient-to-t gradient overflow-hidden from-bgsuccess to-tobgsuccess min-h-screen justify-center items-center flex'> */}
+      <div className="w-full md:max-w-[1247px] py-10 px-[20px] md:px-[50px] lg:px-[166.5px] bg-white rounded-[20px] text-center shadow-xl shadow-shadowcard">
           <div className="flex relative flex-row text-center items-center justify-center gap-14">
-            <img src={msgform} alt="gambar surat di form" className="absolute lg:w-auto md:w-[90px] lg:size-auto md:right-3 lg:right-16 right-3 w-[50px]" />
+            <img src={msgform} alt="gambar surat di form" className="absolute lg:w-auto md:w-[90px] lg:size-auto md:right-3 lg:right-8 right-3 w-[50px]" />
             <h1 className='text-[30px] md:text-[60px] lg:text-[100px] text-brown1 mb-2 font-titanone font-normal'>
               Card Form
             </h1>
@@ -67,9 +67,9 @@ const SuccessPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   )
 }
 
-export default SuccessPage
+export default SuccessElem
