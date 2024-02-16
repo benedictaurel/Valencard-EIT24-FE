@@ -15,16 +15,22 @@ export default {
         "brown1" : "#68423D",
         "hvrkrem1" : "#ffebdb",
         "shadowbtn" : "#BCACAE",
+        "shadowcard" : "#BE9191",
         "bgsuccess" : "#FFD2D2",
         "tobgsuccess" : "#FCF2F2",
         "pinktebel" : "#D11C5C",
-        "cardformsuccess" : "#FEE1E1"
+        "cardformsuccess" : "#FEE1E1",
+        "bgnotfound" : "#F07474",
+        "tobgnotfound" : "#F7A1A1",
+        "buttoncolor" : "#F6EAE7"
       },
       fontFamily: {
         titanone: "Titan One",
         kleeone: "Klee One",
         sarala: "Sarala",
         mada: "Mada",
+        fredokaone : "Fredoka",
+        poppins : ["Poppins", "sans-serif"],
       },
       backgroundImage: {
         gradient: "linear-gradient(180deg ,#fed1d1,#f4e9e9dd,#f1e8e800)",

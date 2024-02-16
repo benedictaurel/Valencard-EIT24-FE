@@ -11,10 +11,9 @@ const Home = () => {
                     <img src={Surat} alt="kotaknya doang" className="absolute top-48 z-0" />
                     <img src={Buletbawah} alt="kotaknya doang" className="absolute bottom-0 left-0 w-full h-1/3 z-0" />
                     <div className='flex-col text-center font-bold z-10'>
-                        {/* <valenCard/> */}
-                        <h1 className='text-[100px] text-brown1 mb-20 font-titanone font-normal flex flex-row'>
+                        <h1 className='lg:text-[100px] sm:text-[50px] text-brown1 mb-20 font-titanone font-normal flex flex-row'>
                             VALEN
-                            <img src={Heart} alt="hati surat" className="w-auto h-24 mt-10"/>
+                            <img src={Heart} alt="hati surat" className="w-auto lg:h-24 mt-10 sm:h-12"/>
                             CARD
                         </h1>
                         <h1 className='text-xl font-kleeone mb-1'>enter your code</h1>
