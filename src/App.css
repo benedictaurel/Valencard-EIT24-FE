@@ -1,11 +1,6 @@
-@font-face {
-    font-family: "NaomisHand";
-    src: local("NaomisHand"),
-    url(src/fonts/NaomisHand-Regular.ttf) format("truetype");
-}
+.font-nanum {
+    font-family: 'Nanum Pen Script';
 
-.text-message {
-    font-family: NaomisHand;
 }
 
 .text-color {
