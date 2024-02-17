@@ -56,6 +56,9 @@ export default {
       height: {
         '575': '575px'
       },
+      scale: {
+        '200': '2'
+      }
     },
   },
   plugins: [],
