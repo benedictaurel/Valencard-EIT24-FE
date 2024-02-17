@@ -20,7 +20,7 @@ const Home = () => {
                 return
             }
             event.preventDefault()
-            navigate(`/${typedCode}`)
+            navigate(`/card/${typedCode}`)
         }
     }
 
@@ -46,7 +46,7 @@ const Home = () => {
                 $(this).detach();
             }
         });
-    }, 500);
+    }, 900);
 
 
     return (
