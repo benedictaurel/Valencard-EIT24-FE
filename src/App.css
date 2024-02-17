@@ -1,3 +1,28 @@
 .text-color {
     color:  #67423d;
 }
+
+@media screen and (max-width: 768px) {
+    .cupid-image {
+        transform: scale(0.7) !important;
+        rotate: 180deg !important;
+        left: 40px !important;
+        bottom: 260px !important;
+    }
+
+    .love-background {
+        width: 100vw !important;
+        height: 1000px !important;
+        transform: scale(2) !important;
+        top: 300px !important;
+        left: 40px !important;
+    }
+
+    .text-6xl {
+        font-size: 2rem !important;
+    }
+
+    .text-2xl {
+        font-size: 0.75rem !important;
+    }
+}

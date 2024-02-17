@@ -20,7 +20,7 @@ const Home = () => {
                 return
             }
             event.preventDefault()
-            navigate(`/${typedCode}`)
+            navigate(`/card/${typedCode}`)
         }
     }
 

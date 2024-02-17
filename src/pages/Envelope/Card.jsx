@@ -1,8 +1,26 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Envelope from '/src/assets/envelope.png';
 import LoveBackground from '/src/assets/love.svg';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 function Card() {
+  const { token } = useParams();
+  console.log(token);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://valencard-eit24.vercel.app/api/get-card?card_key=${token}`);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, [token]);
+
   return (
     <div className="bg-gradient-to-b overflow-hidden from-pink1 to-pink2 min-h-screen justify-center items-center flex relative">
       <section id="CardPage">
@@ -10,7 +28,7 @@ function Card() {
           <img src={LoveBackground} alt="lovenya doang" className="absolute bottom--40 left-1/2 transform -translate-x-1/2 scale-150" />
             <div className="text-wrapper absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-125">
                 <a href="/">
-                {/* nanti di ganti route nya yaa */}
+                  {/* nanti ganti aja yakk */}
                 <motion.img 
                     src={Envelope} 
                     alt="envelope" 
