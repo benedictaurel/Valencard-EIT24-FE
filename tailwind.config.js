@@ -47,6 +47,15 @@ export default {
       boxShadow:{
         'inner': 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)'
       },
+      rotate: {
+        '178': '178deg'
+      },
+      width: {
+        '1000': '1000px'
+      },
+      height: {
+        '575': '575px'
+      },
     },
   },
   plugins: [],
