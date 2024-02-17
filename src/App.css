@@ -17,4 +17,12 @@
         top: 300px !important;
         left: 40px !important;
     }
+
+    .text-6xl {
+        font-size: 2rem !important;
+    }
+
+    .text-2xl {
+        font-size: 0.75rem !important;
+    }
 }
