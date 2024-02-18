@@ -1,22 +1,25 @@
-
 import $ from 'jquery';
 import Heart from "./../assets/Heart.png"
 import Surat from "./../assets/surat.png"
 import Buletbawah from "./../assets/buletbulet.png"
 import Buttoncode from "./../assets/buttoncode.png"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 const Home = () => {
     const searchRef = useRef()
     const navigate = useNavigate()
+    const [codeFormat, setCodeFormat] = useState('')
+    const [loveInterval, setLoveInterval] = useState(null)
+
     const handleSearchCode = (event) => {
         let typedCode = searchRef.current.value
         typedCode = typedCode.trim()
         if (event.key === "Enter" || event.type === "click") {
-            if (typedCode === "") {
+            if (typedCode === "" || typedCode.length !== 10) {
                 event.preventDefault()
-                alert("please input valid code")
+                const alertMessage = document.getElementById("alert_msg")
+                alertMessage.style.display = 'block'
                 return
             }
             event.preventDefault()
@@ -24,30 +27,43 @@ const Home = () => {
         }
     }
 
-    $("#header-plugin").load("https://vivinantony.github.io/header-plugin/", function () {
-        $("a.back-to-link").attr("href", "http://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt")
-    });
+    const handleCodeChange = (e) => {
+        const input = e.target.value  ;
+        const inputFormatted = input.replace(/[^0-9a-zA-Z]/g, '');
+        setCodeFormat(inputFormatted); 
+    }
+    
+    useEffect(() => {
+        startLoveAnimation();
+        return () => clearInterval(loveInterval); 
+    }, []);
+    
+    const startLoveAnimation = () => {
+        const loveInterval = setInterval(function () {
+            var r_num = Math.floor(Math.random() * 5) + 1;
+            var r_size = Math.floor(Math.random() * 65) + 10;
+            var r_left = Math.floor(Math.random() * 100) + 1;
+            var r_bg = Math.floor(Math.random() * 25) + 100;
+            var r_time = Math.floor(Math.random() * 9) + 5;
 
-    var love = setInterval(function () {
-        var r_num = Math.floor(Math.random() * 40) + 1;
-        var r_size = Math.floor(Math.random() * 65) + 10;
-        var r_left = Math.floor(Math.random() * 100) + 1;
-        var r_bg = Math.floor(Math.random() * 25) + 100;
-        var r_time = Math.floor(Math.random() * 5) + 5;
+            $("#header-plugin").load("https://vivinantony.github.io/header-plugin/", function () {
+            $("a.back-to-link").attr("href", "http://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt")
+            });
 
-        $('.bg_heart').append("<div class='heart' style='width:" + r_size + "px;height:" + r_size + "px;left:" + r_left + "%;background:rgba(255," + (r_bg - 25) + "," + r_bg + ",1);-webkit-animation:love " + r_time + "s ease;-moz-animation:love " + r_time + "s ease;-ms-animation:love " + r_time + "s ease;animation:love " + r_time + "s ease'></div>");
+            $('.bg_heart').append("<div class='heart' style='width:" + r_size + "px;height:" + r_size + "px;left:" + r_left + "%;background:rgba(255," + (r_bg - 25) + "," + r_bg + ",1);-webkit-animation:love " + r_time + "s ease;-moz-animation:love " + r_time + "s ease;-ms-animation:love " + r_time + "s ease;animation:love " + r_time + "s ease'></div>");
 
-        $('.bg_heart').append("<div class='heart' style='width:" + (r_size - 10) + "px;height:" + (r_size - 10) + "px;left:" + (r_left + r_num) + "%;background:rgba(255," + (r_bg - 25) + "," + (r_bg + 25) + ",1);-webkit-animation:love " + (r_time + 5) + "s ease;-moz-animation:love " + (r_time + 5) + "s ease;-ms-animation:love " + (r_time + 5) + "s ease;animation:love " + (r_time + 5) + "s ease'></div>");
+            $('.bg_heart').append("<div class='heart' style='width:" + (r_size - 10) + "px;height:" + (r_size - 10) + "px;left:" + (r_left + r_num) + "%;background:rgba(255," + (r_bg - 25) + "," + (r_bg + 25) + ",1);-webkit-animation:love " + (r_time + 5) + "s ease;-moz-animation:love " + (r_time + 5) + "s ease;-ms-animation:love " + (r_time + 5) + "s ease;animation:love " + (r_time + 5) + "s ease'></div>");
 
-        $('.heart').each(function () {
-            var top = $(this).css("top").replace(/[^-\d\.]/g, '');
-            var width = $(this).css("width").replace(/[^-\d\.]/g, '');
-            if (top <= -100 || width >= 150) {
-                $(this).detach();
-            }
-        });
-    }, 500);
-
+            $('.heart').each(function () {
+                var top = $(this).css("top").replace(/[^-\d\.]/g, '');
+                var width = $(this).css("width").replace(/[^-\d\.]/g, '');
+                if (top <= -100 || width >= 150) {
+                    $(this).detach();
+                }
+            });
+        }, 500);
+        setLoveInterval(loveInterval);
+    };
 
     return (
         <>
@@ -61,23 +77,27 @@ const Home = () => {
                         CARD
                     </h1>
                     <div className='flex-col text-center font-bold z-20 fixed top-80 md:top-[500px] lg:top-96'>
-                        <h1 className='text-xl font-kleeone mb-1'>enter your code</h1>
-                        <div className="relative lg:w-auto w-screen">
+                        <h1 className='text-xl font-kleeone'>Enter your 10-character code</h1>
+                        <h2 className='hidden text-sm font-kleeone text-red-700' id="alert_msg">(must be 10 characters in length &lt;3)</h2>
+                        <div className="relative lg:w-auto w-screen mt-1">
                             <form onSubmit={handleSearchCode}
                                 onKeyDown={handleSearchCode}>
                                 <input ref={searchRef}
-                                    placeholder="..."
-                                    className=' p-2 text-center sm:text-lg lg:text-3xl font-normal font-kleeone w-[70%] lg:w-[650px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
+                                    placeholder="- - - - - - - - - -"
+                                    value = {codeFormat}
+                                    onChange = {(e) => handleCodeChange(e)}
+                                    maxLength={10} 
+                                    className='p-2 text-center sm:text-lg lg:text-3xl font-normal font-kleeone w-[70%] lg:w-[650px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
                                 />
                             </form>
                             <button className="absolute text-gray-700 right-0 md:right-[68px] lg:right-0 top-0">
-                                <img src={Buttoncode} alt="button submit code" onClick={handleSearchCode} className="size-[45%] md:size-[49%] lg:size-auto" />
+                                <img src={Buttoncode} onClick={handleSearchCode} className="size-[45%] md:size-[49%] lg:size-auto" />
                             </button>
                         </div>
                         <h1 className='text-xl font-kleeone mb-1'>or</h1>
                         <Link to="/generate">
                             <button className='p-3 text-center lg:text-xl font-normal font-kleeone w-[71%] lg:w-[660px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300'>
-                                make your own card now
+                                make your own card now!
                             </button>
                         </Link>
                     </div>
