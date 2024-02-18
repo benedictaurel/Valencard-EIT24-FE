@@ -2,7 +2,6 @@ import $ from 'jquery';
 import Heart from "./../assets/Heart.png"
 import Surat from "./../assets/surat.png"
 import Buletbawah from "./../assets/buletbulet.png"
-import Buttoncode from "./../assets/buttoncode.png"
 import { useRef, useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { PaperPlaneRight } from "@phosphor-icons/react";
@@ -92,8 +91,8 @@ const Home = () => {
                                     className='p-2 text-center sm:text-lg lg:text-3xl font-normal font-kleeone w-[70%] lg:w-[650px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
                                 />
                             </form>
-                            <div onClick={handleSearchCode} className='absolute right-12 md:right-[113px] lg:right-1 text-center justify-center items-center flex top-0 transition-all duration-300 hover:scale-[1.025] rounded-full bg-[#F0C0C0] text-white hover:text-[#F0C0C0] hover:bg-hvrkrem1 h-[40px] w-[40px] md:h-[45px] md:w-[45px] lg:h-[90px] lg:w-[90px] shadow-xl'>
-                                <PaperPlaneRight size={28} />
+                            <div onClick={handleSearchCode} className='absolute right-12 md:right-[113px] lg:right-1 text-center justify-center items-center flex top-0 transition-all duration-300 hover:scale-[1.025] rounded-full bg-[#F0C0C0] text-white hover:text-[#F0C0C0] hover:bg-hvrkrem1 h-[40px] w-[40px] md:h-[45px] md:w-[45px] lg:h-[90px] lg:w-[90px] shadow-xl hover:cursor-pointer'>
+                                <PaperPlaneRight size={28} className='scale-[0.7] md:scale-[0.85] lg:scale-125'/>
                             </div>
                         </div>
                         <h1 className='text-xl font-kleeone mb-1'>or</h1>
