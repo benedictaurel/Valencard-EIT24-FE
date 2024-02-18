@@ -61,7 +61,7 @@ const NotFound = () => {
                 </h1>
                 <Button/>
             </motion.div>
-            <div id="overlay" className={`bg-white absolute w-screen h-screen ${backgroundDelay ? "z-50 transition opacity-100 duration-700" : "opacity-0 transition duration-700"}`}></div>
+            <div id="overlay" className={`bg-white absolute w-screen h-screen ${backgroundDelay ? "z-50 opacity-100" : "opacity-0 transition duration-700"}`}></div>
         </div>
     )
 }

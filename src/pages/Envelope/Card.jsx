@@ -107,7 +107,7 @@ function Card() {
             </div>
           </div>
         )}
-        <div id="loader_elem" className={`w-screen h-screen flex justify-center items-center loader ${loading ? "z-50 transition opacity-100 duration-700" : "opacity-0 transition duration-700"}`}>
+        <div id="loader_elem" className={`w-screen h-screen flex justify-center items-center loader ${loading ? "z-50 opacity-100" : "opacity-0 transition duration-700"}`}>
           <div className="rhombus">
             <div className="circle1"></div>
             <div className="circle2"></div>
