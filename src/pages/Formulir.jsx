@@ -4,18 +4,18 @@ import SuccessElem from './../components/SuccesElem';
 import { motion } from 'framer-motion';
 
 const fadeUpAnimation = {
-  before: {
-      opacity: 0,
-      y: 30,
-  },
-  after: {
-      opacity: 1,
-      y: 0,
-      transition: {
-          delay: 0.1,
-          ease: "easeOut",
-      },
-  },
+    before: {
+        opacity: 0,
+        y: 30,
+    },
+    after: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: 0.1,
+            ease: "easeOut",
+        },
+    },
 };
 
 const Formulir = () => {
