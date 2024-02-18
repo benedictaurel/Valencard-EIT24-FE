@@ -5,7 +5,34 @@ import Buletbawah from "./../assets/buletbulet.png"
 import { useRef, useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { PaperPlaneRight } from "@phosphor-icons/react";
+import { motion } from 'framer-motion';
 
+const fadeInAnimation = {
+    before: {
+        opacity: 0,
+    },
+    afterA: {
+        opacity: 1,
+        transition: {
+            delay: 0.4,
+            duration: 0.4,
+        },
+    },
+    afterB: {
+        opacity: 1,
+        transition: {
+            delay: 0.8,
+            duration: 0.4,
+        },
+    },
+    afterC: {
+        opacity: 1,
+        transition: {
+            delay: 1.2,
+            duration: 0.4,
+        },
+    },
+};
 
 const Home = () => {
     const searchRef = useRef()
@@ -45,7 +72,7 @@ const Home = () => {
             var r_size = Math.floor(Math.random() * 65) + 10;
             var r_left = Math.floor(Math.random() * 100) + 1;
             var r_bg = Math.floor(Math.random() * 25) + 100;
-            var r_time = Math.floor(Math.random() * 9) + 5;
+            var r_time = Math.floor(Math.random() * 10) + 5;
 
             $("#header-plugin").load("https://vivinantony.github.io/header-plugin/", function () {
                 $("a.back-to-link").attr("href", "http://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt")
@@ -70,36 +97,42 @@ const Home = () => {
         <>
             <div className='header-plugin'>
                 <div className='bg_heart overflow-hidden bg-gradient-to-bl from-[#FF9B98] to-[#FFE3E8] min-h-screen justify-center items-center flex relative'>
-                    <img src={Buletbawah} alt="bulet bulet bawah" className="fixed bottom-0 left-0 w-full h-auto lg:h-1/3 z-10" />
-                    <img src={Surat} alt="kotaknya doang" className="z-10 fixed flex-none md:top-20 lg:top-4 top-32" />
-                    <h1 className='fixed flex-none top-48 md:top-60 lg:top-36 z-20 lg:text-[105px] md:text-[75px] text-[50px] text-brown1 font-titanone font-normal justify-center items-center flex flex-row'>
-                        VALEN
-                        <img src={Heart} alt="hati surat" className="md:w-auto w-[48px] lg:h-24 mt-3 lg:mt-10 md:mt-6 md:h-20 sm:h-12" />
-                        CARD
-                    </h1>
+                        <img src={Buletbawah} alt="bulet bulet bawah" className="fixed bottom-0 left-0 w-full h-auto lg:h-1/3 z-10" />
+                        <img src={Surat} alt="kotaknya doang" className="z-10 fixed flex-none md:top-20 lg:top-4 top-32" />
+                        <h1 className='fixed flex-none top-48 md:top-60 lg:top-36 z-20 lg:text-[105px] md:text-[75px] text-[50px] text-brown1 font-titanone font-normal justify-center items-center flex flex-row'>
+                            VALEN
+                            <img src={Heart} alt="hati surat" className="md:w-auto w-[48px] lg:h-24 mt-3 lg:mt-10 md:mt-6 md:h-20 sm:h-12" />
+                            CARD
+                        </h1>
                     <div className='flex-col text-center font-bold z-20 fixed top-80 md:top-[500px] lg:top-96'>
-                        <h1 className='text-xl font-kleeone'>Enter your 10-character code</h1>
-                        <h2 className='hidden text-sm font-kleeone text-red-700 mt-1 mb-2' id="alert_msg">(must be 10 characters in length &lt;3)</h2>
-                        <div className="relative lg:w-auto w-screen mt-1">
-                            <form onSubmit={handleSearchCode}
-                                onKeyDown={handleSearchCode}>
-                                <input ref={searchRef}
-                                    placeholder="- - - - - - - - - -"
-                                    value={codeFormat}
-                                    onChange={(e) => handleCodeChange(e)}
-                                    maxLength={10}
-                                    className='p-2 text-center sm:text-lg lg:text-3xl font-normal font-kleeone w-[70%] lg:w-[650px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
-                                />
-                            </form>
-                            <div onClick={handleSearchCode} className='absolute right-12 md:right-[113px] lg:right-1 text-center justify-center items-center flex top-0 transition-all duration-300 hover:scale-[1.025] rounded-full bg-[#F0C0C0] text-white hover:text-[#F0C0C0] hover:bg-hvrkrem1 h-[40px] w-[40px] md:h-[45px] md:w-[45px] lg:h-[90px] lg:w-[90px] shadow-xl hover:cursor-pointer'>
-                                <PaperPlaneRight size={28} className='scale-[0.7] md:scale-[0.85] lg:scale-125'/>
+                        <motion.div variants={fadeInAnimation} initial="before" animate="afterA" viewport={{ once:true }}>
+                            <h1 className='text-xl font-kleeone'>Enter your 10-character code</h1>
+                            <h2 className='hidden text-sm font-kleeone text-red-700 mt-1 mb-2' id="alert_msg">(must be 10 characters in length &lt;3)</h2>
+                            <div className="relative lg:w-auto w-screen mt-1">
+                                <form onSubmit={handleSearchCode}
+                                    onKeyDown={handleSearchCode}>
+                                    <input ref={searchRef}
+                                        placeholder="- - - - - - - - - -"
+                                        value={codeFormat}
+                                        onChange={(e) => handleCodeChange(e)}
+                                        maxLength={10}
+                                        className='p-2 text-center sm:text-lg lg:text-3xl font-normal font-kleeone w-[70%] lg:w-[650px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
+                                    />
+                                </form>
+                                <div onClick={handleSearchCode} className='absolute right-12 md:right-[113px] lg:right-1 text-center justify-center items-center flex top-0 transition-all duration-300 hover:scale-[1.025] rounded-full bg-[#F0C0C0] text-white hover:text-[#F0C0C0] hover:bg-hvrkrem1 h-[40px] w-[40px] md:h-[45px] md:w-[45px] lg:h-[90px] lg:w-[90px] shadow-xl hover:cursor-pointer'>
+                                    <PaperPlaneRight size={28} className='scale-[0.7] md:scale-[0.85] lg:scale-125'/>
+                                </div>
                             </div>
-                        </div>
-                        <h1 className='text-xl font-kleeone mb-1'>or</h1>
+                        </motion.div>
+                        <motion.div variants={fadeInAnimation} initial="before" animate="afterB" viewport={{ once:true }}>
+                            <h1 className='text-xl font-kleeone mb-1'>or</h1>
+                        </motion.div>
                         <Link to="/generate">
-                            <button className='p-3 text-center lg:text-xl font-normal font-kleeone w-[71%] lg:w-[660px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300 hover:scale-[1.005]'>
-                                make your own card now!
-                            </button>
+                            <motion.div variants={fadeInAnimation} initial="before" animate="afterC" viewport={{ once:true }}>
+                                <button className='p-3 text-center lg:text-xl font-normal font-kleeone w-[71%] lg:w-[660px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300 hover:scale-[1.005]'>
+                                    make your own card now!
+                                </button>
+                            </motion.div>
                         </Link>
                     </div>
                 </div>

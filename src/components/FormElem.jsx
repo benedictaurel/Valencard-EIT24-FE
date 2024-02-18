@@ -130,7 +130,7 @@ const GenerateElem = ({ onSuccess }) => {
                             onChange={handleChange}
                             maxLength={45}
                             style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                            className='w-full h-[48px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
+                            className='w-full h-[48px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl pt-2 shadow-shadowbtn focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
                         />
                     </div>
 
@@ -138,7 +138,7 @@ const GenerateElem = ({ onSuccess }) => {
                     <div className="flex flex-col w-full px-[15px]">
                         <div className="flex justify-between items-center">
                             <label htmlFor="sender" className="font-sarala text-[25px]  ml-10 -mt-5">From</label>
-                            {validationMsg.sender && <div className="flex items-center gap-1 px-2 font-semibold text-red-500 bg-red-100 rounded-md mb-3 mb-3">{validationMsg.sender}</div>}
+                            {validationMsg.sender && <div className="flex items-center gap-1 px-2 font-semibold text-red-500 bg-red-100 rounded-md mb-3">{validationMsg.sender}</div>}
                         </div>
                         <textarea
                             name="sender"
@@ -147,7 +147,7 @@ const GenerateElem = ({ onSuccess }) => {
                             onChange={handleChange}
                             maxLength={45}
                             style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                            className='w-full h-[48px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
+                            className='w-full h-[48px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl pt-2 shadow-shadowbtn focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
                         />
                     </div>
 
@@ -164,7 +164,7 @@ const GenerateElem = ({ onSuccess }) => {
                             onChange={handleChange}
                             maxLength={750}
                             style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                            className='w-full h-[116px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500 overflow-hidden'
+                            className='w-full h-[116px] px-8 py-1 text-lg font-normal font-kleeone rounded-[25px] shadow-xl shadow-shadowbtn focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500 overflow-hidden'
                         />
                     </div>
 
