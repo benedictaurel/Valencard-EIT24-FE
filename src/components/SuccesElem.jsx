@@ -2,7 +2,7 @@ import { useState } from "react";
 import msgform from "./../assets/msgform.png";
 import { Copy, CheckSquareOffset } from "@phosphor-icons/react";
 
-const SuccessElem = () => {
+const SuccessElem = ({cardKey}) => {
   const [isCopied, setIsCopied] = useState(false)
 
   async function copyText(text) {
@@ -55,12 +55,12 @@ const SuccessElem = () => {
           </h1>
           <div className="flex justify-center items-center">
             <h1 id="code" onClick={handleCopy} className="hover:cursor-pointer text-[28px] md:text-[45px] lg:text-[70px] font-bold font-mada text-pinktebel mb-6 hover:text-pink-600 hover:scale-105">
-              (unique code)
+              {cardKey}
             </h1>
           </div>
           <div className="flex flex-col md:flex-row text-center justify-center items-center gap-4">
             <h1 id="linkcode" className="md:text-2xl lg:text-3xl font-bold font-sarala md:mb-6">
-              contohnamawebsite.com/111111
+              contohnamawebsite.com/{cardKey}
             </h1>
             <h1 onClick={handleCopyLink}
               className="flex flex-row underline underline-offset-8 md:text-2xl lg:text-3xl font-bold font-mada mb-6 text-pinktebel hover:text-pink-600 hover:scale-105 hover:cursor-pointer">
