@@ -78,7 +78,7 @@ const Home = () => {
                     </h1>
                     <div className='flex-col text-center font-bold z-20 fixed top-80 md:top-[500px] lg:top-96'>
                         <h1 className='text-xl font-kleeone'>Enter your 10-character code</h1>
-                        <h2 className='hidden text-sm font-kleeone text-red-700' id="alert_msg">(must be 10 characters in length &lt;3)</h2>
+                        <h2 className='hidden text-sm font-kleeone text-red-700 mt-1 mb-2' id="alert_msg">(must be 10 characters in length &lt;3)</h2>
                         <div className="relative lg:w-auto w-screen mt-1">
                             <form onSubmit={handleSearchCode}
                                 onKeyDown={handleSearchCode}>
@@ -90,13 +90,13 @@ const Home = () => {
                                     className='p-2 text-center sm:text-lg lg:text-3xl font-normal font-kleeone w-[70%] lg:w-[650px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 focus:outline-0'
                                 />
                             </form>
-                            <button className="absolute text-gray-700 right-0 md:right-[68px] lg:right-0 top-0">
+                            <button className="absolute text-gray-700 right-0 md:right-[68px] lg:right-0 top-[0.8px] transition-all duration-300 hover:scale-[1.025]">
                                 <img src={Buttoncode} onClick={handleSearchCode} className="size-[45%] md:size-[49%] lg:size-auto" />
                             </button>
                         </div>
                         <h1 className='text-xl font-kleeone mb-1'>or</h1>
                         <Link to="/generate">
-                            <button className='p-3 text-center lg:text-xl font-normal font-kleeone w-[71%] lg:w-[660px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300'>
+                            <button className='p-3 text-center lg:text-xl font-normal font-kleeone w-[71%] lg:w-[660px] lg:h-[90px] rounded-full mb-2 shadow-xl shadow-shadowbtn bg-krem1 hover:bg-hvrkrem1 transition-all duration-300 hover:scale-[1.015]'>
                                 make your own card now!
                             </button>
                         </Link>
