@@ -60,7 +60,7 @@ const SuccessElem = ({cardKey}) => {
           </div>
           <div className="flex flex-col md:flex-row text-center justify-center items-center gap-4">
             <h1 id="linkcode" className="md:text-2xl lg:text-3xl font-bold font-sarala md:mb-6">
-              contohnamawebsite.com/{cardKey}
+            valencard.vercel.app/card/{cardKey}
             </h1>
             <h1 onClick={handleCopyLink}
               className="flex flex-row underline underline-offset-8 md:text-2xl lg:text-3xl font-bold font-mada mb-6 text-pinktebel hover:text-pink-600 hover:scale-105 hover:cursor-pointer">
