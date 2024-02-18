@@ -128,8 +128,9 @@ const GenerateElem = ({ onSuccess }) => {
                             id="recipient"
                             value={formData.recipient}
                             onChange={handleChange}
+                            maxLength={45}
                             style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                            className='w-full h-[48px] px-8 py-2 text-2xl font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
+                            className='w-full h-[48px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
                         />
                     </div>
 
@@ -144,8 +145,9 @@ const GenerateElem = ({ onSuccess }) => {
                             id="sender"
                             value={formData.sender}
                             onChange={handleChange}
+                            maxLength={45}
                             style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                            className='w-full h-[48px] px-8 py-2 text-2xl font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
+                            className='w-full h-[48px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
                         />
                     </div>
 
@@ -162,7 +164,7 @@ const GenerateElem = ({ onSuccess }) => {
                             onChange={handleChange}
                             maxLength={750}
                             style={{ boxShadow: 'inset 0px 5px 4px rgba(0, 0, 0, 0.25)' }}
-                            className='w-full h-[116px] px-8 py-2 text-2xl font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500'
+                            className='w-full h-[116px] px-8 py-1 text-lg font-normal font-kleeone rounded-[50px] shadow-xl shadow-shadowbtn bg-form focus:outline-none resize-none bg-form outline-none focus:bg-[#FFDEE3] focus:outline-form transition-all duration-500 overflow-hidden'
                         />
                     </div>
 
