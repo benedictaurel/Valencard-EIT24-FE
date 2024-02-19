@@ -72,25 +72,18 @@ function Card() {
   return (
       <div className="bg-gradient-to-b overflow-hidden from-pink1 to-pink2 min-h-screen justify-center items-center flex relative">
         {showMessage ? (
-          <motion.div
-          variants={fadeInAnimation}
-          initial="before"
-          animate="after"
-          className="flex justify-center items-center z-10 inset-0"
-          >
-            <div className="block shadow-xl bg-white rotate-178 rounded-lg w-80vw md:w-1000 h-575 relative">
-              <img src={LoveBackground2} alt="lovenya doang" className="absolute scale-200 transform -translate-x-1/2 z-20 love-background rotate-180" />
-              <img src={Cupid} alt="cupid" className="absolute z-20 rotate-180 bottom-48 md:bottom-40 right-5 cupid-image" />
-              <img src={DoubleLove} alt="double love" className="absolute z-20 rotate-180 bottom-5 md:bottom-12 left-5 md:left-12" />
-              <div className="font-nanum font-bold non-italic text-lg md:text-5xl rotate-180 absolute right-12 md:right-24 bottom-24 md:bottom-16">
-                <p>From : {cardData ? cardData.sender : ''}</p>
-              </div>
-              <div className="font-nanum font-bold non-italic text-lg md:text-5xl rotate-180 absolute right-12 md:right-24 bottom-32 md:bottom-32">
-                <p>To : {cardData ? cardData.recipient : ''}</p>
-              </div>
-              <div className="font-nanum non-italic text-lg md:text-3xl rotate-180 absolute right-12 md:right-24 bottom-52 md:bottom-52 message-container">
-                <p>{cardData ? cardData.message : ''}</p>
-              </div>
+          <motion.div variants={fadeInAnimation} initial="before" animate="after" className="bottom-28 z-10 right-4 md:right-64 left-4 md:left-64 block shadow-xl bg-white transform rotate-178 absolute rounded-lg w-80vw md:w-1000 h-575">
+            <img src={LoveBackground2} alt="lovenya doang" className="absolute scale-200 transform -translate-x-1/2 z-20 love-background rotate-180" />
+            <img src={Cupid} alt="cupid" className="absolute z-20 rotate-180 bottom-48 md:bottom-40 right-5 cupid-image" />
+            <img src={DoubleLove} alt="double love" className="absolute z-20 rotate-180 bottom-5 md:bottom-12 left-5 md:left-12" />
+            <div className="font-nanum font-bold non-italic text-lg md:text-5xl rotate-180 absolute right-12 md:right-24 bottom-24 md:bottom-16">
+              <p>From : {cardData ? cardData.sender : ''}</p>
+            </div>
+            <div className="font-nanum font-bold non-italic text-lg md:text-5xl rotate-180 absolute right-12 md:right-24 bottom-32 md:bottom-32">
+              <p>To : {cardData ? cardData.recipient : ''}</p>
+            </div>
+            <div className="font-nanum non-italic text-lg md:text-3xl rotate-180 absolute right-12 md:right-24 bottom-52 md:bottom-52 message-container">
+              <p>{cardData ? cardData.message : ''}</p>
             </div>
           </motion.div>
         ) : (
