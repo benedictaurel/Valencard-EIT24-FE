@@ -33,9 +33,9 @@ function Card() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`https://valencard-eit24.vercel.app/api/get-card?card_key=${token}`);
-        setCardData(response.data.card);
-        if (response.data.success === true) {
+        const response = await axios.get(`https://valencard-be.vercel.app/api/cards/${token}`);
+        setCardData(response.data);
+        if (response.data && response.data.card_key) {
           setLoading(false);
 
           const loaderElem = document.getElementById("loader_elem");
@@ -80,7 +80,7 @@ function Card() {
               <p>From : {cardData ? cardData.sender : ''}</p>
             </div>
             <div className="font-nanum font-bold non-italic text-lg md:text-5xl rotate-180 absolute right-12 md:right-24 bottom-32 md:bottom-32">
-              <p>To : {cardData ? cardData.recipient : ''}</p>
+              <p>To : {cardData ? (cardData.recipient || cardData.receiver) : ''}</p>
             </div>
             <div className="font-nanum non-italic text-lg md:text-3xl rotate-180 absolute right-12 md:right-24 bottom-52 md:bottom-52 message-container">
               <p>{cardData ? cardData.message : ''}</p>

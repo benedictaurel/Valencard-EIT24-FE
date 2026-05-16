@@ -57,22 +57,25 @@ const GenerateElem = ({ onSuccess }) => {
         setIsSubmitting(true);
 
         try {
-            const response = await axios.post('https://valencard-eit24.vercel.app/api/post-card', formData);
+            const response = await axios.post('https://valencard-be.vercel.app/api/cards', {
+                sender: formData.sender,
+                receiver: formData.recipient,
+                message: formData.message,
+            });
             const data = response.data;
 
-            if (data.success) {
-                //alert('Card created successfully!');
-                const cardKey = data.card_key;
+            if (data.card_key) {
                 // Handle successful card creation (e.g., redirecting or clearing the form)
                 setFormData({ sender: '', recipient: '', message: '', theme: 1 }); // Reset form
                 onSuccess(data.card_key);
             } else {
                 // Handle failure
-                alert(data.message);
+                alert(data.error || 'Failed to create card');
             }
         } catch (error) {
             console.error("Failed to create card:", error);
-            alert('Failed to create card. Please try again.');
+            const errMsg = error.response?.data?.error || 'Failed to create card. Please try again.';
+            alert(errMsg);
         } finally {
             setIsSubmitting(false); 
         }
